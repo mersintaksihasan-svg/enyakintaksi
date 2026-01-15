@@ -1,0 +1,270 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* ANA HEADER: Her şeyi yan yana getiren sihirli komutlar */
+.main-header {
+    background-color: #111;
+    color: white;
+    display: flex;
+    /* İçindeki 3 ana bloğu yan yana dizer */
+    justify-content: space-between;
+    /* Blokları başa, ortaya ve sona yayar */
+    align-items: center;
+    /* Dikeyde hepsini ortalar */
+    padding: 10px 5%;
+    height: 130px;
+    /* Header yüksekliği */
+}
+
+/* 1. Logo Alanı */
+.logo-placeholder {
+    width: 180px;
+    height: 90px;
+    border: 6px dashed #f1c40f;
+    /* Logo boşken belli olsun diye çerçeve */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* 2. Orta Kısım (Başlık ve Telefon) */
+.header-center {
+    text-align: center;
+}
+
+.header-center h1 {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+}
+
+.header-center span {
+    color: #f1c40f;
+}
+
+.phone-link {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* 3. Menü Linkleri (UL yapısı) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    /* Menü elemanlarını yan yana dizer */
+    gap: 20px;
+    /* Aralarındaki boşluk */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f1c40f;
+}
+
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../logo.png");
+    /* Arka plana bir taksi görseli gelebilir */
+    background-size: contain;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #f1c40f;
+    color: #111;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d4ac0d;
+    transform: scale(1.05);
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 5%;
+    background: linear-gradient(#4b411c, #f111);
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #f1c40f;
+}
+
+.service-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.booking-section {
+    padding: 50px 5%;
+    background-color: #4f4a34;
+    text-align: center;
+}
+
+.booking-form {
+    max-width: 600px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* İkişerli yan yana */
+    gap: 1.3rem;
+}
+
+.booking-form input {
+    padding: 1.01rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+.booking-form button {
+    grid-column: span 2;
+    /* Buton tüm satırı kaplasın */
+    background-color: #111;
+    color: #f1c40f;
+    padding: 1.5rem;
+    border: 5px darkolivegreen solid;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 30px;
+}
+
+
+/* Mobil uyum için şimdilik sadece temel ayar */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        /* Mobilde sığmazsa alt alta gelsin */
+        height: auto;
+        padding: 20px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+    }
+
+    @media (max-width: 900px) {
+        .hamburger {
+            display: block;
+            /* Simgeyi göster */
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: none;
+            /* Menüyü gizle */
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Checkbox işaretlendiğinde menüyü göster */
+        #menu-toggle:checked~.nav-links {
+            display: flex;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: block;
+        /* Simgeyi göster */
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        /* Menüyü gizle */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Checkbox işaretlendiğinde menüyü göster */
+    #menu-toggle:checked~.nav-links {
+        display: flex;
+    }
+}
